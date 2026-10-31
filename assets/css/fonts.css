@@ -1,0 +1,47 @@
+/* ══════════════════════════════════════════════════════════════
+   ORBIT — self-hosted typefaces
+
+   The same three families the site always used — Manrope (display),
+   Inter (body) and JetBrains Mono (data) — now served from this
+   origin instead of a render-blocking third-party stylesheet.
+
+   Why this is faster, not just different:
+   · the old Google Fonts <link> was render-blocking and cost an extra
+     DNS lookup, TLS handshake and CSS round-trip before first paint;
+   · all three families are variable fonts, so one file covers every
+     weight in use (nine static instances became three variable files);
+   · the unicode-range is byte-identical to the subset Google served,
+     so glyph coverage and fallback behaviour are unchanged.
+
+   font-display: swap keeps text readable while a face is still loading.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Manrope — display. Weights 500–800 (headline, section titles, brand). */
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url('../fonts/manrope-latin-var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2191, U+2193, U+2212, U+FEFF, U+FFFD;
+}
+
+/* Inter — body copy. Weights 400–600. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url('../fonts/inter-latin-var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2191, U+2193, U+2212, U+FEFF, U+FFFD;
+}
+
+/* JetBrains Mono — labels, counters, technical readouts. Weights 400–500. */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('../fonts/jetbrains-mono-latin-var.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122, U+2191, U+2193, U+2212, U+FEFF, U+FFFD;
+}
