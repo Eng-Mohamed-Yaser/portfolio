@@ -157,6 +157,28 @@ through dedicated tokens so every surface matches:
 Spacing follows the spec: 1160px container, 72–120px section rhythm, 250–320ms
 transitions, 3–4px hover lift.
 
+### Motion & depth tokens
+
+A follow-up enhancement pass added a second token group for gradients, glows and motion. These
+sit alongside the originals — nothing above was replaced.
+
+| Token | Value | Use |
+|---|---|---|
+| `--accent-violet` | `#8174D8` | soft violet accent |
+| `--grad-blue` / `--grad-blue-violet` | blue gradients | buttons, borders, headings |
+| `--grad-text` / `--grad-border` | blue→ice / blue→violet | gradient text, gradient rings |
+| `--glow-blue` / `--glow-violet` | soft shadows | card hover glow |
+| `--shadow-lift` / `--shadow-nav` | deep elevation | hovered cards, navbar |
+| `--t-micro` / `--t-card` / `--t-reveal` | 180 / 380 / 640ms | motion timing scale |
+| `--ease-out` | `cubic-bezier(.22,.72,.24,1)` | entrances and exits |
+| `--z-backdrop` / `--z-header` / `--z-progress` / `--z-skip` | −1 / 60 / 120 / 200 | stacking order |
+
+Cards use three local variables — `--ty`, `--rx`, `--ry` — that feed the `transform`, so hover
+depth and pointer tilt stay in CSS. The reveal animation deliberately uses the independent
+`translate` property rather than `transform`, which keeps `transform` free for the card system.
+
+See `ORBIT-ENHANCEMENT-REPORT.md` for the full motion report and validation results.
+
 ---
 
 ## Section map

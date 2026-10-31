@@ -1,5 +1,10 @@
 # Professional Portfolio UI/UX Enhancement & Refactoring — Final Report
 
+> **Follow-up round:** a subsequent *Premium Visual Enhancement & Motion Design* pass was applied
+> on top of this build. See **`ORBIT-ENHANCEMENT-REPORT.md`** for the motion, depth and
+> interaction work, the validation results, and the two animation defects that were found and
+> fixed. No structure, copy, URL or project content from this report changed in that round.
+
 **Site:** ORBIT — Mohamed Yasser, Personal Portfolio
 **Location:** `C:\Users\yasr4\Downloads\Mohamed_Yasser\`
 **Approach:** Incremental refactor of the existing codebase. No rebuild, no new frameworks,
